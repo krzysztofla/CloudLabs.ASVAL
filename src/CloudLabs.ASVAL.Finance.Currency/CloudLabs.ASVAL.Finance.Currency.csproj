@@ -15,4 +15,13 @@
         <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="EF" />
+      <Folder Include="Workers" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CloudLabs.ASVAL.Finance.Shared\CloudLabs.ASVAL.Finance.Shared.csproj" />
+    </ItemGroup>
+
 </Project>
