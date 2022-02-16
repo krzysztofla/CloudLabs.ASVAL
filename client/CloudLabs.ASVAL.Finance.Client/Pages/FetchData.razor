@@ -1,4 +1,5 @@
 ﻿@page "/fetchdata"
+@using Grpc.Net.Client
 @inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
@@ -28,10 +29,9 @@ else
         @foreach (var forecast in forecasts)
         {
             <tr>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
+                <td>@forecast.Symbol</td>
+                <td>@forecast.Timestamp</td>
+                <td>@forecast.Value</td>
             </tr>
         }
         </tbody>
@@ -39,22 +39,33 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private List<WeatherForecast> forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        AppContext.SetSwitch(
+            "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+        AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);
+        var channel = GrpcChannel.ForAddress("https://localhost:7108");
+        var client = new Fnance.Client.PricingFeed.PricingFeedClient(channel);
+        
+        var pricingStream  = client.SubscribePricing(new Fnance.Client.PricingRequest() {Symbol = "USD"});
+        
+        while (await pricingStream.ResponseStream.MoveNext(CancellationToken.None))
+        {
+            var crt = pricingStream.ResponseStream.Current;
+            forecasts.Add(new WeatherForecast() { Symbol = crt.Symbol, Timestamp = crt.Timestamp, Value = crt.Value});
+        }
+        
     }
 
     public class WeatherForecast
     {
-        public DateTime Date { get; set; }
+        public long Timestamp { get; set; }
 
-        public int TemperatureC { get; set; }
+        public string Symbol { get; set; }
 
-        public string? Summary { get; set; }
-
-        public int TemperatureF => 32 + (int) (TemperatureC / 0.5556);
+        public int Value { get; set; }
     }
 
 }

@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.ASVAL.Finance.Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.ASVAL.Finance.Shared", "src\CloudLabs.ASVAL.Finance.Shared\CloudLabs.ASVAL.Finance.Shared.csproj", "{07FA9301-3ED0-4D18-AA4D-77F222C84E4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.ASVAL.Fnance.Price.Feed", "src\CloudLabs.ASVAL.Fnance.Price.Feed\CloudLabs.ASVAL.Fnance.Price.Feed.csproj", "{BB074F7C-598D-4CEB-81A4-E171AB9E825E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,7 @@ Global
 		{02A6AB9A-78FD-42D3-9315-DB8A28DE9ED2} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
 		{2A636FB8-0A00-4A19-8E7E-8612D613D3DF} = {E6F9BF81-6134-4001-9AF3-55B4451C15F7}
 		{07FA9301-3ED0-4D18-AA4D-77F222C84E4B} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
+		{BB074F7C-598D-4CEB-81A4-E171AB9E825E} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{78438A9C-BCA1-496A-B603-BE5864ADB48F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,5 +52,9 @@ Global
 		{07FA9301-3ED0-4D18-AA4D-77F222C84E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07FA9301-3ED0-4D18-AA4D-77F222C84E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07FA9301-3ED0-4D18-AA4D-77F222C84E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB074F7C-598D-4CEB-81A4-E171AB9E825E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB074F7C-598D-4CEB-81A4-E171AB9E825E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB074F7C-598D-4CEB-81A4-E171AB9E825E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB074F7C-598D-4CEB-81A4-E171AB9E825E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
