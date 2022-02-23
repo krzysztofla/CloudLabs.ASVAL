@@ -1,5 +1,7 @@
 ﻿@page "/fetchdata"
 @using Grpc.Net.Client
+@using CloudLabs.ASVAL.Finance.Currency
+@using Grpc.Net.Client.Web
 @inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
@@ -26,14 +28,14 @@ else
         </tr>
         </thead>
         <tbody>
-        @foreach (var forecast in forecasts)
-        {
-            <tr>
-                <td>@forecast.Symbol</td>
-                <td>@forecast.Timestamp</td>
-                <td>@forecast.Value</td>
-            </tr>
-        }
+        @* @foreach (var forecast in forecasts) *@
+        @* { *@
+        @*     <tr> *@
+        @*         <td>@forecast.Symbol</td> *@
+        @*         <td>@forecast.Timestamp</td> *@
+        @*         <td>@forecast.Value</td> *@
+        @*     </tr> *@
+        @* } *@
         </tbody>
     </table>
 }
@@ -43,20 +45,14 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        AppContext.SetSwitch(
-            "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
-        AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);
-        var channel = GrpcChannel.ForAddress("https://localhost:7108");
-        var client = new Fnance.Client.PricingFeed.PricingFeedClient(channel);
-        
-        var pricingStream  = client.SubscribePricing(new Fnance.Client.PricingRequest() {Symbol = "USD"});
-        
-        while (await pricingStream.ResponseStream.MoveNext(CancellationToken.None))
+        var channel = GrpcChannel.ForAddress("https://localhost:7108", new GrpcChannelOptions
         {
-            var crt = pricingStream.ResponseStream.Current;
-            forecasts.Add(new WeatherForecast() { Symbol = crt.Symbol, Timestamp = crt.Timestamp, Value = crt.Value});
-        }
-        
+            HttpHandler = new GrpcWebHandler(new HttpClientHandler())
+        });
+
+        var client = new Greeter.GreeterClient(channel);
+        var response = await client.SayHelloAsync(new HelloRequest { Name = ".Krzysztof" });
+
     }
 
     public class WeatherForecast

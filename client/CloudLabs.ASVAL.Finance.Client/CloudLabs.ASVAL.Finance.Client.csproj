@@ -20,7 +20,7 @@
     </ItemGroup>
     
     <ItemGroup>
-      <Protobuf Include="Protos\pricing.proto">
+      <Protobuf Include="Protos\greet.proto">
         <GrpcServices>Client</GrpcServices>
         <Access>Public</Access>
         <ProtoCompile>True</ProtoCompile>
