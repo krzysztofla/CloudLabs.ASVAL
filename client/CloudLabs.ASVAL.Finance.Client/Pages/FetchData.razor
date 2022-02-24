@@ -45,7 +45,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var channel = GrpcChannel.ForAddress("https://localhost:7108", new GrpcChannelOptions
+        var channel = GrpcChannel.ForAddress("https://localhost:7101", new GrpcChannelOptions
         {
             HttpHandler = new GrpcWebHandler(new HttpClientHandler())
         });
