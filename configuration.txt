@@ -1,5 +1,12 @@
-docker run --name sqlidentity -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Password!8" -e "MSSQL_PID=Express" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest 
-
+c
 Add-Migration InitialIdentityServerMigration -c PersistedGrantDbContext -o Migrations/IdentityServer/PersistedGrantDb
 
 Add-Migration InitialIdentityServerMigration -c ConfigurationDbContext -o Migrations/IdentityServer/ConfigurationDb
+
+Update-Database -Context PersistedGrantDbContext
+
+Update-Database -Context ConfigurationDbContext
+
+Add-Migration InitialAspNetIdentityMigration -c UserIdentityDbContext -o Migrations/IdentityServer/UserIdentityDb
+
+Update-Database -Context UserIdentityDbContext
