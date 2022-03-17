@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E624EA2E-FA5C-402D-BAF8-41A97F3C5653}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{E6F9BF81-6134-4001-9AF3-55B4451C15F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CAC367BC-CF80-46E1-892C-34516F6B301F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{EE3389B6-EE66-4AE2-877C-82C4BEF60F5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{AED0BC16-913D-4D9D-A62A-0C6F465604E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0BE87B5D-0482-45FC-AD68-067FB4D725CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{51C3166D-D77D-4803-A5F8-DF37C041A486}"
+	ProjectSection(SolutionItems) = preProject
+		configuration.txt = configuration.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.ASVAL.Identity", "src\Services\CloudLabs.ASVAL.Identity\CloudLabs.ASVAL.Identity.csproj", "{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE3389B6-EE66-4AE2-877C-82C4BEF60F5E} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
+		{AED0BC16-913D-4D9D-A62A-0C6F465604E8} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
+		{0BE87B5D-0482-45FC-AD68-067FB4D725CE} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
+		{51C3166D-D77D-4803-A5F8-DF37C041A486} = {0BE87B5D-0482-45FC-AD68-067FB4D725CE}
+		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E} = {51C3166D-D77D-4803-A5F8-DF37C041A486}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34768E7B-FAE9-4933-85FF-7BBF2F44C318}
+	EndGlobalSection
+EndGlobal
