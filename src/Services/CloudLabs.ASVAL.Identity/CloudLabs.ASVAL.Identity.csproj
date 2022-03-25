@@ -26,8 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Models\Consent\" />
+    <Folder Include="Providers\" />
   </ItemGroup>
 
 </Project>
