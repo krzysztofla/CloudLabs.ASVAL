@@ -24,7 +24,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudLabs.ASVAL.Identity", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3E22D4FA-445D-49DB-B03A-5C8CDFEE8723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.ASVAL.WebClient", "src\Web\CloudLabs.ASVAL.WebClient\CloudLabs.ASVAL.WebClient.csproj", "{DD0947CC-B526-4A10-A92B-35B00CBA7562}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "asvalweb", "src\Web\asvalweb\", "{4927CC9A-6AAD-4225-BB3C-785FD579F365}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55325"
+		Debug.AspNetCompiler.PhysicalPath = "src\Web\asvalweb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55325\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55325"
+		Release.AspNetCompiler.PhysicalPath = "src\Web\asvalweb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55325\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55325"
+		SlnRelativePath = "src\Web\asvalweb\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.ASVAL.BFF", "src\Gateways\CloudLabs.ASVAL.BFF\CloudLabs.ASVAL.BFF.csproj", "{15020E67-71C4-41F4-B7D5-6911B720CD7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,10 +57,14 @@ Global
 		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD0947CC-B526-4A10-A92B-35B00CBA7562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD0947CC-B526-4A10-A92B-35B00CBA7562}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD0947CC-B526-4A10-A92B-35B00CBA7562}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD0947CC-B526-4A10-A92B-35B00CBA7562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4927CC9A-6AAD-4225-BB3C-785FD579F365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4927CC9A-6AAD-4225-BB3C-785FD579F365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4927CC9A-6AAD-4225-BB3C-785FD579F365}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4927CC9A-6AAD-4225-BB3C-785FD579F365}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{15020E67-71C4-41F4-B7D5-6911B720CD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15020E67-71C4-41F4-B7D5-6911B720CD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15020E67-71C4-41F4-B7D5-6911B720CD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15020E67-71C4-41F4-B7D5-6911B720CD7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,7 +76,8 @@ Global
 		{51C3166D-D77D-4803-A5F8-DF37C041A486} = {0BE87B5D-0482-45FC-AD68-067FB4D725CE}
 		{3EBBB2E2-92B5-4A38-9A8B-05E1FCC2E03E} = {51C3166D-D77D-4803-A5F8-DF37C041A486}
 		{3E22D4FA-445D-49DB-B03A-5C8CDFEE8723} = {E624EA2E-FA5C-402D-BAF8-41A97F3C5653}
-		{DD0947CC-B526-4A10-A92B-35B00CBA7562} = {3E22D4FA-445D-49DB-B03A-5C8CDFEE8723}
+		{4927CC9A-6AAD-4225-BB3C-785FD579F365} = {3E22D4FA-445D-49DB-B03A-5C8CDFEE8723}
+		{15020E67-71C4-41F4-B7D5-6911B720CD7B} = {EE3389B6-EE66-4AE2-877C-82C4BEF60F5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34768E7B-FAE9-4933-85FF-7BBF2F44C318}
