@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
 	"io/ioutil"
@@ -16,15 +15,15 @@ func returnAll(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(rw, "Data %s", response)
-	fmt.Println(err)
-	json.NewEncoder(rw).Encode("{}")
+	rw.Header().Set("Content-Type", "application/json")
+	//json.NewEncoder(rw).Encode(response)
+	rw.Write([]byte(response))
 }
 
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
 
-	router.HandleFunc("/getSomeData", returnAll).Methods("GET")
+	router.HandleFunc("/getSomeData", returnAll).Methods("Post")
 
 	http.ListenAndServe(":8080", router)
 
