@@ -1,4 +1,4 @@
 package basket
 
-type Basket struct {
+type SSBasket struct {
 }
