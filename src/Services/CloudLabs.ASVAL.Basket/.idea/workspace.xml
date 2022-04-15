@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="176f5f8c-f085-41a2-ac67-7d1cef4ade57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/basket/basket.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/basket/basket.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/basket/checkout.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/basket/item.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
